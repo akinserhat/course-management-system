@@ -102,6 +102,5 @@ public class StudentService {
         } else {
             return "Silinecek öğrenci id bulunamadı: " + id;
         }
-
     }
 }

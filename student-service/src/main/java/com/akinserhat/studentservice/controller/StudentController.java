@@ -35,18 +35,18 @@ public class StudentController {
         return ResponseEntity.ok(studentService.getAllStudentsByStatus(status));
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<String> createStudent(@Valid @RequestBody CreateStudentRequest createStudentRequest) {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(studentService.createStudent(createStudentRequest));
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<String> updateStudent(@PathVariable Long id, @RequestBody UpdateStudentRequest updateStudentRequest) {
         return ResponseEntity.ok(studentService.updateStudent(id, updateStudentRequest));
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteStudent(@PathVariable Long id) {
         return ResponseEntity.ok(studentService.deleteStudent(id));
     }
